@@ -1,0 +1,9 @@
+all:
+  recaptcha:
+    enabled:        false
+  commentAdmin:
+    max_length:     50
+  gravatar:
+    enabled:        true
+    default_size:   40
+    default_image:  ../web/images/gravatar_default.png

@@ -1,0 +1,51 @@
+options:
+  collate: utf8_unicode_ci
+  charset: utf8
+Comment:
+  actAs:
+    Timestampable:
+  columns:
+    record_model:
+      type: string(255)
+      notnull: true
+    record_id:
+      type: integer
+      notnull: true
+    author_name:
+      type: string(255)
+      notnull: true
+    author_email:
+      type: string(255)
+    author_website:
+      type: string(255)
+      extra: link
+    body:
+      type: clob
+      notnull: true
+    is_delete:
+      type: boolean
+      default: false
+    edition_reason:
+      type: clob
+    reply:
+      type: integer
+  relations:
+    Comment: { local: reply, foreign: id }
+CommentReport:
+  actAs:
+    Timestampable:
+  columns:
+    reason:
+      type: clob
+      notnull: true
+    referer:
+      type: string(255)
+    state:
+      type: enum
+      values: [valid, invalid, untreated]
+      default: untreated
+    id_comment:
+      type: integer
+      notnull: true
+  relations:
+    Comment: { onDelete: cascade, local: id_comment, foreign: id }
