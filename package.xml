@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" packagerversion="1.7.1" version="2.0" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0     http://pear.php.net/dtd/tasks-1.0.xsd     http://pear.php.net/dtd/package-2.0     http://pear.php.net/dtd/package-2.0.xsd">
+  <name>vjCommentPlugin</name>
+  <channel>plugins.symfony-project.org</channel>
+  <summary>Comment behavior + comment's administration and moderation</summary>
+  <description>You want to add comments on news page, pool or anything ? Just use this plugin ! It provides a comment behavior. Now, everything is commentable !</description>
+  <lead>
+    <name>Jean-Philippe MORVAN</name>
+    <user>jp_morvan</user>
+    <email>jp.morvan@ville-villejuif.fr</email>
+    <active>yes</active>
+  </lead>
+  <developer>
+    <name>Grzegorz Śliwiński</name>
+    <user>fizyk</user>
+    <email>fizyk@fizyk.net.pl</email>
+    <active>yes</active>
+  </developer>
+  <date>2010-04-22</date>
+  <version>
+    <release>1.1.1</release>
+    <api>1.0.0</api>
+  </version>
+  <stability>
+    <release>stable</release>
+    <api>stable</api>
+  </stability>
+  <license uri="http://www.symfony-project.org/license">MIT license</license>
+  <notes>-</notes>
+  <contents>
+  <dir name="/">
+   <file name="config/app.yml" role="data"/>
+   <file name="config/routing.yml" role="data"/>
+   <file name="config/doctrine/schema.yml" role="data"/>
+   <file name="i18n/fr/messages.xml" role="data"/>
+   <file name="i18n/fr/sf_admin.xml" role="data"/>
+   <file name="i18n/fr/vjComment.xml" role="data"/>
+   <file name="i18n/it/messages.xml" role="data"/>
+   <file name="i18n/it/sf_admin.xml" role="data"/>
+   <file name="i18n/it/vjComment.xml" role="data"/>
+   <file name="i18n/pl/messages.xml" role="data"/>
+   <file name="i18n/pl/sf_admin.xml" role="data"/>
+   <file name="i18n/pl/vjComment.xml" role="data"/>
+   <file name="lib/doctrine/extension/Commentable/Template/Listener/Commentable.php" role="data"/>
+   <file name="lib/doctrine/extension/Commentable/Template/Commentable.php" role="data"/>
+   <file name="lib/filter/doctrine/PluginCommentFormFilter.class.php" role="data"/>
+   <file name="lib/filter/doctrine/PluginCommentReportFormFilter.class.php" role="data"/>
+   <file name="lib/form/doctrine/PluginCommentCommonForm.class.php" role="data"/>
+   <file name="lib/form/doctrine/PluginCommentForm.class.php" role="data"/>
+   <file name="lib/form/doctrine/PluginCommentReportForm.class.php" role="data"/>
+   <file name="lib/helper/GravatarHelper.php" role="data"/>
+   <file name="lib/model/doctrine/PluginComment.class.php" role="data"/>
+   <file name="lib/model/doctrine/PluginCommentReport.class.php" role="data"/>
+   <file name="lib/model/doctrine/PluginCommentReportTable.class.php" role="data"/>
+   <file name="lib/model/doctrine/PluginCommentTable.class.php" role="data"/>
+   <file name="lib/tools/GravatarApi.class.php" role="data"/>
+   <file name="lib/tools/commentTools.class.php" role="data"/>
+   <file name="lib/vjComment.class.php" role="data"/>
+   <file name="modules/comment/actions/actions.class.php" role="data"/>
+   <file name="modules/comment/actions/components.class.php" role="data"/>
+   <file name="modules/comment/lib/BaseCommentActions.class.php" role="data"/>
+   <file name="modules/comment/lib/BaseCommentComponents.class.php" role="data"/>
+   <file name="modules/comment/templates/_comment.php" role="data"/>
+   <file name="modules/comment/templates/_comment_author.php" role="data"/>
+   <file name="modules/comment/templates/_comment_body.php" role="data"/>
+   <file name="modules/comment/templates/_comment_infos.php" role="data"/>
+   <file name="modules/comment/templates/_form.php" role="data"/>
+   <file name="modules/comment/templates/_formComment.php" role="data"/>
+   <file name="modules/comment/templates/_formReport.php" role="data"/>
+   <file name="modules/comment/templates/_list.php" role="data"/>
+   <file name="modules/comment/templates/reportSentSuccess.php" role="data"/>
+   <file name="modules/comment/templates/reportSuccess.php" role="data"/>
+   <file name="modules/commentAdmin/actions/actions.class.php" role="data"/>
+   <file name="modules/commentAdmin/config/generator.yml" role="data"/>
+   <file name="modules/commentAdmin/lib/BaseCommentAdminActions.class.php" role="data"/>
+   <file name="modules/commentAdmin/lib/commentAdminForm.class.php" role="data"/>
+   <file name="modules/commentAdmin/lib/commentAdminGeneratorConfiguration.class.php" role="data"/>
+   <file name="modules/commentAdmin/lib/commentAdminGeneratorHelper.class.php" role="data"/>
+   <file name="modules/commentAdmin/lib/commentAdminReplyForm.class.php" role="data"/>
+   <file name="modules/commentAdmin/templates/_body.php" role="data"/>
+   <file name="modules/commentAdmin/templates/_bodyReply.php" role="data"/>
+   <file name="modules/commentAdmin/templates/_form_actions.php" role="data"/>
+   <file name="modules/commentAdmin/templates/_form_header.php" role="data"/>
+   <file name="modules/commentAdmin/templates/_list.php" role="data"/>
+   <file name="modules/commentAdmin/templates/_list_header.php" role="data"/>
+   <file name="modules/commentAdmin/templates/_list_td_actions.php" role="data"/>
+   <file name="modules/commentAdmin/templates/indexSuccess.php" role="data"/>
+   <file name="modules/commentReportAdmin/actions/actions.class.php" role="data"/>
+   <file name="modules/commentReportAdmin/config/generator.yml" role="data"/>
+   <file name="modules/commentReportAdmin/lib/BaseCommentReportAdminActions.class.php" role="data"/>
+   <file name="modules/commentReportAdmin/lib/commentReportAdminGeneratorConfiguration.class.php" role="data"/>
+   <file name="modules/commentReportAdmin/lib/commentReportAdminGeneratorHelper.class.php" role="data"/>
+   <file name="modules/commentReportAdmin/templates/_comment_link.php" role="data"/>
+   <file name="modules/commentReportAdmin/templates/_state.php" role="data"/>
+   <file name="more/modules/fr/commentAdmin/config/generator.yml" role="data"/>
+   <file name="more/modules/fr/commentReportAdmin/config/generator.yml" role="data"/>
+   <file name="web/css/comment.min.css" role="data"/>
+   <file name="web/css/commentAdmin.min.css" role="data"/>
+   <file name="web/css/commentReportAdmin.min.css" role="data"/>
+   <file name="web/css/form.min.css" role="data"/>
+   <file name="web/css/formComment.min.css" role="data"/>
+   <file name="web/css/infoBulle.min.css" role="data"/>
+   <file name="web/css/replyTo.min.css" role="data"/>
+   <file name="web/css/reportComment.min.css" role="data"/>
+   <file name="web/css/reportSent.min.css" role="data"/>
+   <file name="web/images/arrow-down.png" role="data"/>
+   <file name="web/images/comments.png" role="data"/>
+   <file name="web/images/delete.png" role="data"/>
+   <file name="web/images/edit.png" role="data"/>
+   <file name="web/images/email_edit.png" role="data"/>
+   <file name="web/images/error.png" role="data"/>
+   <file name="web/images/error_delete.png" role="data"/>
+   <file name="web/images/exclamation.png" role="data"/>
+   <file name="web/images/flag_green.png" role="data"/>
+   <file name="web/images/flag_orange.png" role="data"/>
+   <file name="web/images/flag_red.png" role="data"/>
+   <file name="web/images/gravatar_default.png" role="data"/>
+   <file name="web/images/magnifier.png" role="data"/>
+   <file name="web/images/restore.png" role="data"/>
+   <file name="web/images/validate.png" role="data"/>
+   <file name="web/js/reply.js" role="data"/>
+   <file name="web/js/reply.min.js" role="data"/>
+   <file name="LICENSE" role="data"/>
+   <file name="README" role="data"/>
+  </dir>
+  </contents>
+  <dependencies>
+    <required>
+      <php>
+        <min>5.2.4</min>
+      </php>
+      <pearinstaller>
+        <min>1.4.1</min>
+      </pearinstaller>
+      <package>
+        <name>symfony</name>
+        <channel>pear.symfony-project.com</channel>
+        <min>1.3.0</min>
+        <max>1.5.0</max>
+        <exclude>1.5.0</exclude>
+      </package>
+    </required>
+  </dependencies>
+  <phprelease></phprelease>
+  <changelog>
+    <release>
+      <version>
+        <release>1.1.1</release>
+        <api>1.0.0</api>
+      </version>
+      <stability>
+        <release>stable</release>
+        <api>stable</api>
+      </stability>
+      <license uri="http://www.symfony-project.org/license">MIT license</license>
+      <date>2010-04-22</date>
+      <license>MIT</license>
+      <notes>
+        * jp_morvan: add italian translation (thanks to Alessandro Rossi)
+      </notes>
+    </release>
+  </changelog>
+</package>
