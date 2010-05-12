@@ -49,4 +49,8 @@ class BaseCommentComponents extends sfComponents
   public function executeList()
   {
   }
+
+  public function executeCommentlist()
+  {
+  }
 }

@@ -26,3 +26,12 @@ commentAdmin:
     prefix_path:          /commentAdmin
     column:               id
     with_wildcard_routes: true
+
+commentAjaxAdd:
+  url: /add-comment
+  param: { module: comment, action: add }
+  requirements:
+    body: .+
+    record_model: .+
+    record_id: \d+
+    user_id: \d+

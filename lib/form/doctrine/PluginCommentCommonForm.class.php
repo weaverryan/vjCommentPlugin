@@ -58,7 +58,7 @@ class PluginCommentCommonForm extends BaseCommentForm
     // if comment is a reply, update the body value
     if(isset($values['reply']) && $values['reply'] != "" && $obj = Doctrine::getTable('Comment')->find($values['reply']))
     {
-      $tmp = commentTools::setQuote($obj->author_name, $obj->body);
+      $tmp = commentTools::setQuote($values['reply_author'], $obj->body);
       $values['body'] = $tmp.$values['body'];
     }
     else

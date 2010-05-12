@@ -1,6 +1,7 @@
 <?php use_helper('I18N', 'JavascriptBase') ?>
 <?php use_stylesheet("/vjCommentPlugin/css/form.min.css") ?>
 <?php use_stylesheet("/vjCommentPlugin/css/formComment.min.css") ?>
+<?php use_javascript('/js/jquery.scrollTo.js') ?>
 <?php $sf_user->setAttribute('nextComment', $object->getNbComments()+1) ?>
 <a name="top"></a>
 <div class="form-comment">
@@ -11,7 +12,21 @@
     <?php include_partial("comment/form", array('form' => $form)) ?>
     <tr>
       <td colspan="2" class="submit">
+<?php if(sfConfig::get('app_vjCommentPlugin_jquery')): use_helper('jQuery'); ?>
+    <?php echo jq_submit_to_remote('ajax_submit', __('send', array(), 'vjComment') , array(
+        'url'   => '/add-comment', 'success' =>  "alert('in here');
+        $('#tr_reply_author').hide('fast');
+        $('#tr_reply_author_delete').hide('fast');
+        $('#comment_body').val('');
+        $('#comment_list').replaceWith(data);
+        $.scrollTo( $('.comment').last(), 800 );",
+    ))
+ //   error message
+   //        send message of success, clear body field, replace list, scroll to new comment
+            ?>
+  <?php else: ?>
         <input type="submit" value="<?php echo __('send', array(), 'vjComment') ?>" class="submit" />
+  <?php endif; ?>
       </td>
     </tr>
   </table>
