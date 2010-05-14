@@ -14,7 +14,8 @@
       <td colspan="2" class="submit">
 <?php if(sfConfig::get('app_vjCommentPlugin_jquery')): use_helper('jQuery'); ?>
     <?php echo jq_submit_to_remote('ajax_submit', __('send', array(), 'vjComment') , array(
-        'url'   => '/add-comment', 'success' =>  "alert('in here');
+        'url'   => '/add-comment', 
+       'success' =>  "alert('this will be a lightbox with a message on success');
         $('#tr_reply_author').hide('fast');
         $('#tr_reply_author_delete').hide('fast');
         $('#comment_body').val('');
