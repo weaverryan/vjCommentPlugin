@@ -14,11 +14,11 @@ abstract class PluginComment extends BaseComment
   {
     if( null !== $this->getUserId() )
     {
-        return $this->getUser()->getUsername();
+      return $this->getUser()->getUsername();
     }
     else
     {
-        return $this->getAuthorName();
+      return $this->getAuthorName();
     }
   }
 }
