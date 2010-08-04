@@ -10,15 +10,15 @@
  */
 abstract class PluginComment extends BaseComment
 {
-    public function getAuthor()
+  public function getAuthor()
+  {
+    if( null !== $this->getUserId() )
     {
-        if( null !== $this->getUserId() )
-        {
-            return $this->getUser()->getUsername();
-        }
-        else
-        {
-            return $this->getAuthorName();
-        }
+        return $this->getUser()->getUsername();
     }
+    else
+    {
+        return $this->getAuthorName();
+    }
+  }
 }
