@@ -33,7 +33,9 @@ Comment:
     reply:
       type: integer
   relations:
-    Comment: { local: reply, foreign: id }
+    Comment:
+      local: reply
+      foreign: id
 <?php if( sfConfig::get( 'app_vjCommentPlugin_guardbind', false ) ):  ?>
     sfGuardUser:
       alias: User
