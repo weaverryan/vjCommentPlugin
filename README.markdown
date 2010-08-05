@@ -9,13 +9,13 @@ A presentation of the plugin is available [here](http://www.ville-villejuif.fr/s
 Installation
 ------------
 
-  * Install the plugin
+### Install the plugin
 
-    $ symfony plugin:install vjCommentPlugin
-    $ symfony plugin:publish-assets
-    $ symfony cc
+    ./symfony plugin:install vjCommentPlugin
+    ./symfony plugin:publish-assets
+    ./symfony cc
 
-  * If you do migrations, run them now:
+### If you do migrations, run them now:
 
     ./symfony doctrine:generate-migrations-diff
     ./symfony doctrine:migrate
@@ -42,7 +42,8 @@ Build your project:
 
         $ symfony doctrine:build --model --forms --filters --sql
 
-At this point behaviour doesn't change or add anything to the model, so migrations will do nothing.
+At this point behaviour doesn't change or add anything to the model,
+so migrations will do nothing.
 
 Activate module in frontend
 
@@ -134,16 +135,18 @@ Activate modules in backend
         enabled_modules:        [..., commentAdmin, commentReportAdmin]
 
 **Moderate comments**
-You can edit a comment, reply to or delete one. Deletion is not permanent ; the comment appears in frontend with the mention 'deleted by moderator'.
-You can restore it.
-Reply in backend is same as reply in frontend. You can use the user object to override author values in the form.
+You can edit a comment, reply to or delete one. Deletion is not permanent;
+the comment appears in frontend with the mention 'deleted by moderator'.
+You can restore it. Reply in backend is same as reply in frontend. You
+can use the user object to override author values in the form.
 
 **Moderate reports**
 You can remove, validate or invalidate a report and edit or remove a comment.
-There's three states : untreated, validated and invalidated. By default, list only shows untreated reports. You can switch in filters.
+There's three states : untreated, validated and invalidated. By default,
+list only shows untreated reports. You can switch in filters.
 
-In the list of the commentAdmin module, comment's body is truncated to 50 characters by default to keep a readable list.
-You can edit this option :
+In the list of the commentAdmin module, comment's body is truncated to
+50 characters by default to keep a readable list. You can edit this option:
 
   * edit apps/your_frontend_app/config/app.yml
 
@@ -154,7 +157,9 @@ You can edit this option :
 Internationalization
 -------------
 
-English (default), French, Polish (thanks to [fizyk](http://www.symfony-project.org/plugins/developer/grzegorz-liwiski)) and Italian (thanks to Alessandro Rossi) translations are embed in the plugin.
+English (default), French, Polish
+(thanks to [fizyk](http://www.symfony-project.org/plugins/developer/grzegorz-liwiski))
+and Italian (thanks to Alessandro Rossi) translations are embed in the plugin.
 
 To use french :
 
@@ -202,13 +207,14 @@ TODO
 
 Thanks
 -------------
-A really thanks to [fizyk](http://www.symfony-project.org/plugins/developer/grzegorz-liwiski) for all his comments,
-the polish translation and especially for all his great ideas ! And now, for being developper of this plugin !
+A really thanks to [fizyk](http://www.symfony-project.org/plugins/developer/grzegorz-liwiski)
+for all his comments, the polish translation and especially for all his
+great ideas! And now, for being developper of this plugin!
 
-Thanks also to Alessandro Rossi for the Italian translation !
+Thanks also to Alessandro Rossi for the Italian translation!
 
 
 Contact
 -------------
-Please contact me if you see a problem, an error or if you think that something can be enhanced !
-Advice are cool too !
+Please contact me if you see a problem, an error or if you think that
+something can be enhanced! Advice are cool too!
