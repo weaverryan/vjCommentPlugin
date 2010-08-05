@@ -7,13 +7,13 @@
 class vjComment
 {
   /**
-   * Checks wheter user is authenticated, and the sfGuardPlugin bound to commentable
+   * Checks whether user is authenticated, and the sfGuardPlugin bound to commentable
    * @return boolean
    * @author fizyk
    */
   static function isUserBoundAndAuthenticated()
   {
-      return sfContext::getInstance()->getUser()->isAuthenticated() && sfConfig::get( 'app_vjCommentPlugin_guardbind', false );
+    return sfContext::getInstance()->getUser()->isAuthenticated() && sfConfig::get('app_vjCommentPlugin_guardbind', false);
   }
 
   /**
@@ -22,14 +22,14 @@ class vjComment
    */
   static function checkAccessToForm()
   {
-      if( sfConfig::get( 'app_vjCommentPlugin_restricted' ) )
-      {
-          return vjComment::isUserBoundAndAuthenticated();
-      }
-      else
-      {
-          return true;
-      }
+    if(sfConfig::get('app_vjCommentPlugin_restricted'))
+    {
+      return vjComment::isUserBoundAndAuthenticated();
+    }
+    else
+    {
+      return true;
+    }
   }
 
   /**
@@ -42,4 +42,3 @@ class vjComment
     return sfConfig::get('app_recaptcha_enabled');
   }
 }
-?>
