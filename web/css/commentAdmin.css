@@ -14,9 +14,9 @@
 }
 
 #sf_admin_container ul li.sf_admin_action_restore a{
-  background: url(../images/restore.png) no-repeat 0 0;
+  background: url(../default/images/restore.png) no-repeat 0 0;
 }
 
 #sf_admin_container ul li.sf_admin_action_reply a{
-  background: url(../images/comments.png) no-repeat 0 0;
+  background: url(../default/images/comments.png) no-repeat 0 0;
 }

@@ -1,6 +1,6 @@
 <?php use_helper('I18N', 'JavascriptBase') ?>
-<?php use_stylesheet("/vjCommentPlugin/css/form.min.css") ?>
-<?php use_stylesheet("/vjCommentPlugin/css/formComment.min.css") ?>
+<?php use_stylesheet(sfConfig::get('app_vjCommentPlugin_style_web_root').'/css/form.css') ?>
+<?php use_stylesheet(sfConfig::get('app_vjCommentPlugin_style_web_root').'/css/formComment.css') ?>
 <?php use_javascript('/js/jquery.scrollTo.js') ?>
 <?php $sf_user->setAttribute('nextComment', $object->getNbComments()+1) ?>
 <a name="top"></a>

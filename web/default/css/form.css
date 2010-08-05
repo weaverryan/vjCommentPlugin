@@ -32,7 +32,7 @@ div.form-comment label.error, div.form-comment ul.error_list li{
 
 div.form-comment ul.error_list{
   margin:20px 0 0 0;
-  list-style-image: url('../images/arrow-down.png');
+  list-style-image: url("'../images/arrow-down.png'");
 }
 
 div.form-comment input.error, div.form-comment textarea.error{

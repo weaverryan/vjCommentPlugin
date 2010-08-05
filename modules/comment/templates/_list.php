@@ -1,8 +1,8 @@
 <div id="comment_list">
 <?php if($object->hasComments()): ?>
   <?php use_helper('Date', 'JavascriptBase', 'I18N') ?>
-  <?php use_stylesheet("/vjCommentPlugin/css/comment.min.css") ?>
-  <?php use_javascript("/vjCommentPlugin/js/reply.min.js") ?>
+  <?php use_stylesheet(sfConfig::get('app_vjCommentPlugin_style_web_root').'/css/comment.css') ?>
+  <?php use_javascript(sfConfig::get('app_vjCommentPlugin_style_web_root').'/js/reply.js') ?>
   <?php if(commentTools::isGravatarAvailable()): ?>
     <?php use_helper('Gravatar') ?>
   <?php endif ?>

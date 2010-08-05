@@ -1,7 +1,7 @@
 <table summary="">
 <?php foreach($form as $id => $f): ?>
   <?php if($id == "reply_author" && $f->getValue()!= ""): ?>
-    <?php use_stylesheet("/vjCommentPlugin/css/replyTo.min.css", "last") ?>
+    <?php use_stylesheet(sfConfig::get('app_vjCommentPlugin_style_web_root').'/css/replyTo.css', "last") ?>
   <?php endif ?>
   <?php if(!$f->isHidden()): ?>
     <?php if(!$f->hasError()): ?>

@@ -1,1 +1,1 @@
-<?php use_stylesheet("/vjCommentPlugin/css/commentAdmin.min.css", "last") ?>
+<?php use_stylesheet("/vjCommentPlugin/css/commentAdmin.css", "last") ?>
