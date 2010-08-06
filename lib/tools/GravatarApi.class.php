@@ -155,9 +155,13 @@ class GravatarApi
       else
       {
         // no gravatar --> get the default one
-        $path = realpath(dirname(__FILE__).DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.$this->default_image);
-      }
+        $path = sfConfig::get('sf_web_dir').$this->default_image;
 
+        if (!file_exists($path))
+        {
+          throw new sfException(sprintf('No default image found at "%s"', $path));
+        }
+      }
       $new_file = fopen($file, 'w+b');
       $gravatar_img = file_get_contents($path, 'rb');
       // image on gravatar.com --> save it in cache
