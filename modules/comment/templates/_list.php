@@ -8,6 +8,6 @@
   <?php endif ?>
   <?php include_partial("comment/commentlist", array('comments' => $object->getAllComments(), 'i' =>0)) ?>
 <?php else: ?>
-  <div><h1><?php echo __('Be the first to post', array(), 'vjComment') ?></h1></div>
+  <div><h1><?php echo __('Be the first to comment', array(), 'vjComment') ?></h1></div>
 <?php endif ?>
 </div>
