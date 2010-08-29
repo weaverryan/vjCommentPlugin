@@ -139,10 +139,8 @@ class GravatarApi
   public function getGravatar($email)
   {
     $md5_email = md5($email);
-    $file = $this->cache_dir.$md5_email.'.png';
-
-    // the cache is valid, return the cached image
-    $to_return = $md5_email;
+    $filename = $md5_email.md5($this->image_size).'.png';
+    $file = $this->cache_dir.$filename;
 
     // check the cache
     if (!$this->isCacheValid($file))
@@ -168,7 +166,7 @@ class GravatarApi
       fwrite($new_file, $gravatar_img);
     }
 
-    return str_replace(DIRECTORY_SEPARATOR, '/', $this->cache_dir_name).$to_return;
+    return str_replace(DIRECTORY_SEPARATOR, '/', $this->cache_dir_name).$filename;
   }
 
   protected function setDirectories()
