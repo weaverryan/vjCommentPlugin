@@ -5,8 +5,8 @@ all:
     guardbind: false
     restricted: false
 
-    # whether to allow users to "report" bad comments
-    enable_comment_reporting: true
+    auto_enable_modules:  true     # whether to automatically enable the comment module
+    enable_comment_reporting: true # whether to allow users to "report" bad comments
 
     style_web_root:    /vjCommentPlugin/default
 
