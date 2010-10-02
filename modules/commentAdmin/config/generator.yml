@@ -17,11 +17,11 @@ generator:
         is_delete:          { label: Deleted }
         record_model:       { label: Model }
         record_id:          { label: Record }
-        created_at:         { label: Posted the }
+        created_at:         { label: Posted on }
         edition_reason:     { label: Reason }
       list:
         title:              Comments list
-        display:            [author, _body, created_at]
+        display:            [author, _body, is_delete, created_at]
         sort:               [created_at, desc]
         actions:            {}
         object_actions:
