@@ -1,3 +1,5 @@
+<?php use_helper('I18N') ?>
+
 <div id="comment_list">
 <?php if($object->hasComments()): ?>
   <?php use_helper('Date', 'JavascriptBase', 'I18N') ?>
