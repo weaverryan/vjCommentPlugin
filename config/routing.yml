@@ -14,7 +14,7 @@ commentReportAdmin:
   options:
     model:                CommentReport
     module:               commentReportAdmin
-    prefix_path:          /commentReportAdmin
+    prefix_path:          <?php echo sfConfig::get('app_vjCommentPlugin_admin_route_prefix', '/admin') ?>/commentReport
     column:               id
     with_wildcard_routes: true
 
@@ -23,7 +23,7 @@ commentAdmin:
   options:
     model:                Comment
     module:               commentAdmin
-    prefix_path:          /commentAdmin
+    prefix_path:          <?php echo sfConfig::get('app_vjCommentPlugin_admin_route_prefix', '/admin') ?>/comments
     column:               id
     with_wildcard_routes: true
 
