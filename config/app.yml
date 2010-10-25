@@ -5,6 +5,10 @@ all:
     guardbind: false
     restricted: false
 
+    recaptcha:
+      widget_class:    sfWidgetFormReCaptcha
+      validator_class: sfValidatorReCaptcha
+
     # whether to allow users to "report" bad comments
     enable_comment_reporting: true
 
