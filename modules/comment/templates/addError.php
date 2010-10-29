@@ -1,4 +1,8 @@
-<?php foreach($form->getErrorSchema()->getErrors() as $error):
-        echo "validator: "; print_r( $error->getValidator()->getErrorCodes());
-        echo " error: "; echo $error->__toString(); endforeach;
-        foreach($form as $id => $f): echo $id; echo $f->renderError(); endforeach; ?>
+<?php
+$json = array(
+  'success' => false,
+  'form'    => get_partial('comment/formCommentInner', array('form' => $form)),
+  'errors'  => array_keys($form->getErrorSchema()->getErrors()),
+);
+
+echo json_encode($json);
