@@ -4,10 +4,10 @@
 <?php use_javascript('/js/jquery.scrollTo.js') ?>
 <?php $sf_user->setAttribute('nextComment', $object->getNbComments()+1) ?>
 
-<a name="top"></a>
+<a name="comment_form"></a>
 <div class="form-comment">
   <?php if( vjComment::checkAccessToForm()): ?>
-    <form action="" method="post">
+    <form action="<?php echo $sf_request->getAttribute('comment_submit_url') ?>" method="post">
       <fieldset>
         <legend><?php echo __('Add new comment', array(), 'vjComment') ?></legend>
         <?php include_partial("comment/form", array('form' => $form)) ?>
