@@ -37,13 +37,18 @@ abstract class PluginCommentForm extends PluginCommentCommonForm
 
   protected function addCaptcha()
   {
-    $this->widgetSchema['captcha'] = new sfWidgetFormReCaptcha(array(
+    $config = sfConfig::get('app_vjCommentPlugin_recaptcha', array());
+
+    $widgetClass = isset($config['widget_class']) ? $config['widget_class'] : 'sfWidgetFormReCaptcha';
+    $this->widgetSchema['captcha'] = new $widgetClass(array(
       'public_key' => sfConfig::get('app_recaptcha_public_key')
     ));
 
-    $this->validatorSchema['captcha'] = new sfValidatorReCaptcha(array(
+    $validatorClass = isset($config['validator_class']) ? $config['validator_class'] : 'sfValidatorReCaptcha';
+    $this->validatorSchema['captcha'] = new $validatorClass(array(
       'private_key' => sfConfig::get('app_recaptcha_private_key')
     ));
+
     $this->validatorSchema['captcha']
         ->setMessage('captcha', __('The captcha is not valid (%error%).', array(), 'vjComment'))
         ->setMessage('server_problem', __('Unable to check the captcha from the server (%error%).', array(), 'vjComment'));

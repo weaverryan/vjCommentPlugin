@@ -11,8 +11,12 @@ require_once dirname(__FILE__).'/../lib/BaseCommentActions.class.php';
  */
 class commentActions extends BaseCommentActions
 {
-   public function executeAdd(sfWebRequest $request)
+  public function executeAdd(sfWebRequest $request)
   {
+    // this action is really only meant for ajax, though that's jank and should be improved someday
+    $this->forward404Unless($request->isXmlHttpRequest());
+
+
       // TODO: make sure the user-id matches the user
      if($request->isMethod('post'))
     {
@@ -40,14 +44,15 @@ class commentActions extends BaseCommentActions
 
       $this->form->bind( $formValues );
       
-      if ($this->form->isValid()){
+      if ($this->form->isValid())
+      {
         $this->form->save();
-        // do list template
       }
       else
       {
-       return sfView::ERROR;
+        return sfView::ERROR;
       }
+
       $this->record = Doctrine::getTable($formValues['record_model'])
               ->find($formValues['record_id']);
      }

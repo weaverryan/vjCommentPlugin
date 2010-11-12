@@ -5,8 +5,16 @@ all:
     guardbind: false
     restricted: false
 
+    # whether to submit via ajax by default or not (requires jQuery)
+    use_ajax:   false
+
+    recaptcha:
+      widget_class:    sfWidgetFormReCaptcha
+      validator_class: sfValidatorReCaptcha
+
+    # whether to allow users to "report" bad comments
+    enable_comment_reporting: true
     auto_enable_modules:  true     # whether to automatically enable the comment module
-    enable_comment_reporting: true # whether to allow users to "report" bad comments
 
     style_web_root:    /vjCommentPlugin/default
 
